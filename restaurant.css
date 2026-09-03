@@ -1,0 +1,1040 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body{
+    background:#f4f6fb;
+    overflow-x:hidden;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:80px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 70px;
+
+    background:#ffffff;
+
+    box-shadow:0 3px 10px rgba(0,0,0,0.10);
+
+    z-index:1000;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+nav ul{
+    display:flex;
+    align-items:center;
+    list-style:none;
+}
+
+nav ul li a{
+    text-decoration:none;
+
+    color:red;
+
+    font-size:22px;
+    font-weight:600;
+
+    margin-left:170px;
+
+    transition:0.3s ease;
+}
+
+nav ul li a:hover{
+    color:#FFD54F;
+    font-family:lucida handwriting;
+}
+
+
+/* =====================================================
+   BOOK TICKETS BUTTON
+===================================================== */
+
+.book-btn button{
+    background:#FFD54F;
+
+    color:#111;
+
+    border:none;
+
+    padding:14px 25px;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s ease;
+}
+
+.book-btn button:hover{
+    background:#ffc928;
+
+    transform:scale(1.05);
+}
+
+
+/* =====================================================
+   RESTAURANT SECTION
+===================================================== */
+
+.restaurant-section{
+    padding:125px 40px 60px;
+
+    text-align:center;
+}
+
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.section-title{
+    font-size:42px;
+
+    color:#081b33;
+
+    margin-bottom:8px;
+
+    font-weight:700;
+}
+
+.section-subtitle{
+    font-size:18px;
+
+    color:#666;
+
+    margin-bottom:45px;
+}
+
+
+/* =====================================================
+   8 RESTAURANTS
+   4 COLUMNS × 2 ROWS
+===================================================== */
+
+.restaurant-container{
+
+    width:100%;
+
+    max-width:1250px;
+
+    margin:0 auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:30px;
+
+    align-items:stretch;
+}
+
+
+/* =====================================================
+   RESTAURANT CARD
+===================================================== */
+
+.restaurant-card{
+
+    width:100%;
+
+    background:#ffffff;
+
+    border-radius:22px;
+
+    overflow:visible;
+
+    position:relative;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.12);
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+
+    animation:
+        floatCard 4s ease-in-out infinite;
+}
+
+
+/* CARD HOVER */
+
+.restaurant-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.20);
+
+    animation:none;
+}
+
+
+/* =====================================================
+   FLOATING ANIMATION
+===================================================== */
+
+@keyframes floatCard{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-5px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   IMAGE AREA
+===================================================== */
+
+.restaurant-image{
+
+    width:100%;
+
+    height:230px;
+
+    position:relative;
+
+    overflow:visible;
+
+    --restaurant-image:url("restaurant1.jpeg");
+
+    border-radius:
+        22px 22px 0 0;
+}
+
+
+/* =====================================================
+   3 × 3 IMAGE TILES
+===================================================== */
+
+.image-tiles{
+
+    width:100%;
+    height:100%;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    grid-template-rows:
+        repeat(3,1fr);
+
+    gap:0;
+
+    padding:0;
+
+    transition:
+        gap 0.6s ease,
+        padding 0.6s ease;
+}
+
+
+/* =====================================================
+   INDIVIDUAL IMAGE TILE
+===================================================== */
+
+.image-tiles span{
+
+    display:block;
+
+    background-image:
+        var(--restaurant-image);
+
+    background-size:
+        300% 300%;
+
+    background-repeat:
+        no-repeat;
+
+    background-position:
+        var(--pos);
+
+    border-radius:0;
+
+    transition:
+        transform 0.65s ease,
+        border-radius 0.65s ease,
+        box-shadow 0.65s ease;
+}
+
+
+/* =====================================================
+   HOVER - CREATE GAPS
+===================================================== */
+
+.restaurant-card:hover .image-tiles{
+
+    gap:7px;
+
+    padding:7px;
+}
+
+
+/* =====================================================
+   TILE 1 - TOP LEFT
+===================================================== */
+
+.restaurant-card:hover
+.image-tiles span:nth-child(1){
+
+    transform:
+        rotate(-8deg)
+        translate(-8px,-8px);
+
+    border-radius:10px;
+}
+
+
+/* =====================================================
+   TILE 2 - TOP CENTER
+===================================================== */
+
+.restaurant-card:hover
+.image-tiles span:nth-child(2){
+
+    transform:
+        rotate(5deg)
+        translateY(-10px);
+
+    border-radius:10px;
+}
+
+
+/* =====================================================
+   TILE 3 - TOP RIGHT
+===================================================== */
+
+.restaurant-card:hover
+.image-tiles span:nth-child(3){
+
+    transform:
+        rotate(8deg)
+        translate(8px,-8px);
+
+    border-radius:10px;
+}
+
+
+/* =====================================================
+   TILE 4 - MIDDLE LEFT
+===================================================== */
+
+.restaurant-card:hover
+.image-tiles span:nth-child(4){
+
+    transform:
+        rotate(6deg)
+        translateX(-10px);
+
+    border-radius:10px;
+}
+
+
+/* =====================================================
+   TILE 5 - CENTER
+===================================================== */
+
+.restaurant-card:hover
+.image-tiles span:nth-child(5){
+
+    transform:
+        rotate(-4deg)
+        scale(1.05);
+
+    border-radius:12px;
+}
+
+
+/* =====================================================
+   TILE 6 - MIDDLE RIGHT
+===================================================== */
+
+.restaurant-card:hover
+.image-tiles span:nth-child(6){
+
+    transform:
+        rotate(-6deg)
+        translateX(10px);
+
+    border-radius:10px;
+}
+
+
+/* =====================================================
+   TILE 7 - BOTTOM LEFT
+===================================================== */
+
+.restaurant-card:hover
+.image-tiles span:nth-child(7){
+
+    transform:
+        rotate(8deg)
+        translate(-8px,8px);
+
+    border-radius:10px;
+}
+
+
+/* =====================================================
+   TILE 8 - BOTTOM CENTER
+===================================================== */
+
+.restaurant-card:hover
+.image-tiles span:nth-child(8){
+
+    transform:
+        rotate(-5deg)
+        translateY(10px);
+
+    border-radius:10px;
+}
+
+
+/* =====================================================
+   TILE 9 - BOTTOM RIGHT
+===================================================== */
+
+.restaurant-card:hover
+.image-tiles span:nth-child(9){
+
+    transform:
+        rotate(-8deg)
+        translate(8px,8px);
+
+    border-radius:10px;
+}
+
+
+/* =====================================================
+   TILE SHADOW
+===================================================== */
+
+.restaurant-card:hover
+.image-tiles span{
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.25);
+}
+
+
+/* =====================================================
+   RESTAURANT CONTENT
+===================================================== */
+
+.restaurant-content{
+
+    padding:20px 20px 25px;
+
+    background:#ffffff;
+
+    border-radius:
+        0 0 22px 22px;
+}
+
+
+/* =====================================================
+   RESTAURANT NAME
+===================================================== */
+
+.restaurant-content h3{
+
+    font-size:27px;
+
+    color:#081b33;
+
+    margin-bottom:12px;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.restaurant-content p{
+
+    font-size:16px;
+
+    color:#555;
+
+    line-height:1.5;
+
+    min-height:72px;
+
+    margin-bottom:20px;
+}
+
+
+/* =====================================================
+   VIEW MENU BUTTON
+===================================================== */
+
+.restaurant-btn{
+
+    display:block;
+
+    width:100%;
+
+    padding:13px;
+
+    text-align:center;
+
+    background:#3046d3;
+
+    color:#FFD700;
+
+    text-decoration:none;
+
+    border-radius:10px;
+
+    font-weight:700;
+
+    letter-spacing:0.5px;
+
+    transition:0.3s ease;
+}
+
+
+.restaurant-btn:hover{
+
+    background:#1f35b7;
+
+    transform:scale(1.03);
+}
+
+
+/* =====================================================
+   TABLET RESPONSIVENESS
+   1000px AND BELOW
+===================================================== */
+
+@media(max-width:1000px){
+
+    /* ================= HEADER ================= */
+
+    header{
+
+        width:100%;
+
+        height:55px;
+
+        padding:10px 25px;
+
+        display:flex;
+
+        justify-content:center;
+
+        align-items:center;
+    }
+
+    nav{
+
+        width:100%;
+
+        display:block;
+    }
+
+    nav ul{
+
+        width:100%;
+
+        display:flex;
+
+        justify-content:space-between;
+
+        align-items:center;
+
+        gap:0;
+
+        margin:0;
+
+        padding:0;
+
+        flex-wrap:nowrap;
+    }
+
+    nav ul li{
+
+        flex:1;
+
+        margin:0;
+
+        padding:0;
+
+        text-align:center;
+    }
+
+    nav ul li a{
+
+        display:block;
+
+        margin:0;
+
+        padding:5px 2px;
+
+        font-size:16px;
+
+        font-weight:600;
+
+        text-align:center;
+
+        white-space:nowrap;
+    }
+
+    nav ul li a:hover{
+
+        font-size:16px;
+
+        color:#FFD54F;
+    }
+
+    .book-btn{
+
+        display:none;
+    }
+
+
+    /* ================= RESTAURANTS ================= */
+
+    .restaurant-section{
+
+        padding:90px 30px 40px;
+    }
+
+    .section-title{
+
+        font-size:36px;
+
+        margin-bottom:8px;
+    }
+
+    .section-subtitle{
+
+        font-size:16px;
+
+        margin-bottom:30px;
+    }
+
+    .restaurant-container{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        max-width:750px;
+
+        gap:20px;
+    }
+
+    .restaurant-content{
+
+        padding:18px 18px 22px;
+    }
+
+    .restaurant-content h3{
+
+        font-size:25px;
+
+        margin-bottom:10px;
+    }
+
+    .restaurant-content p{
+
+        font-size:15px;
+
+        min-height:70px;
+
+        margin-bottom:18px;
+    }
+
+    .restaurant-btn{
+
+        padding:13px;
+
+        font-size:15px;
+    }
+
+    .restaurant-image{
+
+        height:220px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE RESPONSIVENESS
+   468px AND BELOW
+===================================================== */
+
+@media(max-width:468px){
+
+    /* ================= HEADER ================= */
+
+    header{
+
+        position:fixed;
+
+        top:0;
+        left:0;
+
+        width:100%;
+
+        height:45px;
+
+        min-height:45px;
+
+        padding:8px 10px;
+
+        display:flex;
+
+        justify-content:center;
+
+        align-items:center;
+
+        background:#ffffff;
+
+        z-index:1000;
+    }
+
+    nav{
+
+        display:block;
+
+        width:100%;
+    }
+
+    nav ul{
+
+        width:100%;
+
+        display:flex;
+
+        justify-content:space-between;
+
+        align-items:center;
+
+        gap:0;
+
+        margin:0;
+
+        padding:0;
+
+        flex-wrap:nowrap;
+    }
+
+    nav ul li{
+
+        flex:1;
+
+        margin:0;
+
+        padding:0;
+
+        text-align:center;
+
+        min-width:0;
+    }
+
+    nav ul li a{
+
+        display:block;
+
+        margin:0;
+
+        padding:2px 1px;
+
+        font-size:13px;
+
+        font-weight:600;
+
+        line-height:1.2;
+
+        text-align:center;
+
+        white-space:nowrap;
+
+        color:red;
+    }
+
+    nav ul li a:hover{
+
+        font-size:13px;
+
+        color:#FFD54F;
+    }
+
+    .book-btn{
+
+        display:none;
+    }
+
+
+    /* ================= RESTAURANT SECTION ================= */
+
+    .restaurant-section{
+
+        width:100%;
+
+        padding:70px 15px 30px;
+
+        text-align:center;
+    }
+
+
+    /* ================= TITLE ================= */
+
+    .section-title{
+
+        font-size:30px;
+
+        line-height:1.2;
+
+        margin-bottom:8px;
+    }
+
+    .section-subtitle{
+
+        font-size:14px;
+
+        line-height:1.4;
+
+        margin-bottom:25px;
+    }
+
+
+    /* ================= ONE COLUMN ================= */
+
+    .restaurant-container{
+
+        width:100%;
+
+        max-width:100%;
+
+        display:grid;
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+    }
+
+
+    /* ================= CARD ================= */
+
+    .restaurant-card{
+
+        width:100%;
+
+        border-radius:18px;
+
+        overflow:visible;
+    }
+
+
+    /* ================= IMAGE ================= */
+
+    .restaurant-image{
+
+        width:100%;
+
+        height:220px;
+
+        overflow:visible;
+
+        border-radius:18px 18px 0 0;
+    }
+
+
+    /* ================= CONTENT ================= */
+
+    .restaurant-content{
+
+        width:100%;
+
+        padding:18px;
+
+        border-radius:0 0 18px 18px;
+    }
+
+    .restaurant-content h3{
+
+        font-size:24px;
+
+        line-height:1.2;
+
+        margin-bottom:8px;
+    }
+
+    .restaurant-content p{
+
+        font-size:14px;
+
+        line-height:1.5;
+
+        min-height:auto;
+
+        margin-bottom:16px;
+    }
+
+
+    /* ================= BUTTON ================= */
+
+    .restaurant-btn{
+
+        width:100%;
+
+        padding:13px;
+
+        font-size:15px;
+
+        border-radius:9px;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL DEVICES
+   360px AND BELOW
+===================================================== */
+
+@media(max-width:360px){
+
+    /* ================= HEADER ================= */
+
+    header{
+
+        height:42px;
+
+        min-height:42px;
+
+        padding:7px 5px;
+    }
+
+    nav ul{
+
+        flex-wrap:nowrap;
+    }
+
+    nav ul li a{
+
+        font-size:11px;
+
+        padding:2px 0;
+
+        white-space:nowrap;
+    }
+
+    nav ul li a:hover{
+
+        font-size:11px;
+    }
+
+
+    /* ================= RESTAURANT SECTION ================= */
+
+    .restaurant-section{
+
+        padding:65px 10px 25px;
+    }
+
+    .section-title{
+
+        font-size:26px;
+
+        margin-bottom:8px;
+    }
+
+    .section-subtitle{
+
+        font-size:13px;
+
+        margin-bottom:20px;
+    }
+
+
+    /* ================= RESTAURANT GRID ================= */
+
+    .restaurant-container{
+
+        grid-template-columns:1fr;
+
+        gap:15px;
+    }
+
+
+    /* ================= IMAGE ================= */
+
+    .restaurant-image{
+
+        height:190px;
+    }
+
+
+    /* ================= CONTENT ================= */
+
+    .restaurant-content{
+
+        padding:15px;
+    }
+
+    .restaurant-content h3{
+
+        font-size:22px;
+    }
+
+    .restaurant-content p{
+
+        font-size:14px;
+
+        margin-bottom:15px;
+    }
+
+
+    /* ================= BUTTON ================= */
+
+    .restaurant-btn{
+
+        padding:12px;
+
+        font-size:14px;
+    }
+}

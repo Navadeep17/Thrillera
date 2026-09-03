@@ -1,0 +1,644 @@
+
+*{ 
+    margin:0; 
+    padding:0; 
+    box-sizing:border-box; 
+    font-family:'Poppins',sans-serif; 
+} 
+
+
+/* =====================================================
+   BODY 
+===================================================== */
+
+body{ 
+    background:#f4f6fb; 
+    overflow-x:hidden; 
+} 
+
+
+/* =====================================================
+   HEADER 
+===================================================== */
+
+header{ 
+    position:fixed; 
+    top:0; 
+    left:0; 
+    width:100%; 
+    height:80px; 
+    display:flex; 
+    justify-content:space-between; 
+    align-items:center; 
+    padding:20px 70px; 
+    background:#ffffff; 
+    box-shadow:0 3px 10px rgba(0,0,0,0.10); 
+    z-index:1000; 
+} 
+
+
+/* =====================================================
+   NAVIGATION 
+===================================================== */
+
+nav ul{ 
+    display:flex; 
+    align-items:center; 
+    list-style:none; 
+} 
+
+
+nav ul li a{ 
+    text-decoration:none; 
+    color:red; 
+    font-size:22px; 
+    font-weight:600; 
+    margin-left:170px; 
+    transition:color 0.3s ease; 
+} 
+
+
+nav ul li a:hover{ 
+    color:#FFD54F; 
+    font-family:lucida handwriting; 
+} 
+
+
+/* =====================================================
+   BOOK TICKETS 
+===================================================== */
+
+.book-btn button{ 
+    background:#FFD54F; 
+    color:#111; 
+    border:none; 
+    padding:14px 25px; 
+    border-radius:8px; 
+    font-size:16px; 
+    font-weight:bold; 
+    cursor:pointer; 
+    transition:
+        transform 0.3s ease, 
+        background 0.3s ease; 
+} 
+
+
+.book-btn button:hover{ 
+    background:#ffc928; 
+    transform:scale(1.05); 
+} 
+
+
+/* =====================================================
+   RIDES SECTION 
+===================================================== */
+
+.rides-section{ 
+    padding:125px 40px 60px; 
+    text-align:center; 
+} 
+
+
+/* =====================================================
+   TITLE 
+===================================================== */
+
+.section-title{ 
+    font-size:42px; 
+    color:#081b33; 
+    margin-bottom:8px; 
+    font-weight:700; 
+} 
+
+
+.section-subtitle{ 
+    font-size:18px; 
+    color:#666; 
+    margin-bottom:45px; 
+} 
+
+
+/* =====================================================
+   RIDES CONTAINER
+   4 COLUMNS × 2 ROWS
+===================================================== */
+
+.rides-container{ 
+    width:100%; 
+    max-width:1250px; 
+    margin:0 auto; 
+    display:grid; 
+    grid-template-columns:repeat(4,1fr); 
+    gap:30px; 
+} 
+
+
+/* =====================================================
+   RIDE CARD 
+===================================================== */
+
+.ride-card{ 
+    width:100%; 
+    background:#ffffff; 
+    border-radius:22px; 
+    overflow:hidden; 
+    box-shadow:0 5px 18px rgba(0,0,0,0.12); 
+    position:relative; 
+    transition:
+        transform 0.5s ease, 
+        box-shadow 0.5s ease; 
+    animation:rideAnimation 10s ease-in-out infinite; 
+} 
+
+
+/* =====================================================
+   10 SECOND AUTOMATIC ANIMATION
+===================================================== */
+
+@keyframes rideAnimation{ 
+
+    0%{ 
+        transform:
+            translateY(0) 
+            rotate(0deg) 
+            scale(1); 
+    } 
+
+
+    20%{ 
+        transform:
+            translateY(-8px) 
+            rotate(0deg) 
+            scale(1); 
+    } 
+
+
+    40%{ 
+        transform:
+            translateY(-8px) 
+            rotate(1deg) 
+            scale(1.02); 
+    } 
+
+
+    60%{ 
+        transform:
+            translateY(-5px) 
+            rotate(-1deg) 
+            scale(1.04); 
+    } 
+
+
+    80%{ 
+        transform:
+            translateY(5px) 
+            rotate(0deg) 
+            scale(1.01); 
+    } 
+
+
+    100%{ 
+        transform:
+            translateY(0) 
+            rotate(0deg) 
+            scale(1); 
+    } 
+
+} 
+
+
+/* =====================================================
+   HOVER CARD 
+===================================================== */
+
+.ride-card:hover{ 
+    animation:none; 
+    transform:
+        translateY(-12px) 
+        scale(1.02); 
+    box-shadow:0 15px 35px rgba(0,0,0,0.22); 
+} 
+
+
+/* =====================================================
+   RIDE IMAGE 
+===================================================== */
+
+.ride-card img{ 
+    width:100%; 
+    height:230px; 
+    object-fit:cover; 
+    display:block; 
+    border-radius:22px 22px 0 0; 
+    transition:
+        transform 0.7s ease, 
+        border-radius 0.7s ease, 
+        filter 0.7s ease; 
+} 
+
+
+/* =====================================================
+   IMAGE HOVER 
+===================================================== */
+
+.ride-card:hover img{ 
+    transform:scale(1.08); 
+    border-radius:0 0 50% 50%; 
+    filter:brightness(1.08); 
+} 
+
+
+/* =====================================================
+   RIDE CONTENT 
+===================================================== */
+
+.ride-content{ 
+    padding:20px 20px 25px; 
+    background:#ffffff; 
+} 
+
+
+/* =====================================================
+   RIDE TITLE 
+===================================================== */
+
+.ride-content h3{ 
+    font-size:26px; 
+    color:#081b33; 
+    margin-bottom:12px; 
+} 
+
+
+/* =====================================================
+   DESCRIPTION 
+===================================================== */
+
+.ride-content p{ 
+    font-size:16px; 
+    color:#555; 
+    line-height:1.5; 
+    min-height:72px; 
+    margin-bottom:20px; 
+} 
+
+
+/* =====================================================
+   BUTTON 
+===================================================== */
+
+.ride-btn{ 
+    display:block; 
+    width:100%; 
+    padding:13px; 
+    text-align:center; 
+    background:#3046d3; 
+    color:#FFD700; 
+    text-decoration:none; 
+    border-radius:10px; 
+    font-weight:700; 
+    letter-spacing:0.5px; 
+    transition:
+        background 0.3s ease, 
+        transform 0.3s ease; 
+} 
+
+
+.ride-btn:hover{ 
+    background:#1f35b7; 
+    transform:scale(1.03); 
+} 
+
+
+/* =====================================================
+   IMAGE 2D MOVEMENT 
+===================================================== */
+
+@keyframes imageMotion{ 
+
+    0%{ 
+        transform:scale(1); 
+    } 
+
+    25%{ 
+        transform:
+            scale(1.03) 
+            rotate(0.5deg); 
+    } 
+
+    50%{ 
+        transform:
+            scale(1.06) 
+            rotate(-0.5deg); 
+    } 
+
+    75%{ 
+        transform:
+            scale(1.03) 
+            rotate(0.5deg); 
+    } 
+
+    100%{ 
+        transform:scale(1); 
+    } 
+
+} 
+
+
+/* =====================================================
+   AUTOMATIC IMAGE ANIMATION 
+===================================================== */
+
+.ride-card img{ 
+    animation:imageMotion 10s ease-in-out infinite; 
+} 
+
+
+/* =====================================================
+   STOP IMAGE ANIMATION ON HOVER 
+===================================================== */
+
+.ride-card:hover img{ 
+    animation:none; 
+} 
+
+
+/* =====================================================
+   TABLET
+   NAVIGATION ONLY
+   1100px AND BELOW
+===================================================== */
+
+@media(max-width:1100px){ 
+
+    /* ===============================
+       RIDES GRID
+       =============================== */
+
+    .rides-container{ 
+        grid-template-columns:repeat(2,1fr); 
+        max-width:750px; 
+    } 
+
+
+    /* ===============================
+       HEADER
+       =============================== */
+
+    header{ 
+        width:100%; 
+        height:55px; 
+        padding:10px 25px; 
+        display:flex; 
+        justify-content:center; 
+        align-items:center; 
+    } 
+
+
+    /* ===============================
+       NAVIGATION
+       =============================== */
+
+    nav{ 
+        width:100%; 
+    } 
+
+
+    nav ul{ 
+        width:100%; 
+        display:flex; 
+        justify-content:space-between; 
+        align-items:center; 
+        flex-wrap:nowrap; 
+        gap:0; 
+        margin:0; 
+        padding:0; 
+    } 
+
+
+    nav ul li{ 
+        flex:1; 
+        margin:0; 
+        padding:0; 
+        text-align:center; 
+    } 
+
+
+    nav ul li a{ 
+        display:block; 
+        margin:0; 
+        padding:5px 2px; 
+        font-size:16px; 
+        font-weight:600; 
+        text-align:center; 
+        white-space:nowrap; 
+    } 
+
+
+    nav ul li a:hover{ 
+        color:#FFD54F; 
+    } 
+
+
+    /* ===============================
+       BOOK BUTTON HIDDEN
+       =============================== */
+
+    .book-btn{ 
+        display:none; 
+    } 
+
+} 
+
+
+/* =====================================================
+   MOBILE
+   NAVIGATION ONLY
+   650px AND BELOW
+===================================================== */
+
+@media(max-width:650px){ 
+
+    /* ===============================
+       HEADER
+       =============================== */
+
+    header{ 
+        position:fixed; 
+        top:0; 
+        left:0; 
+        width:100%; 
+        height:45px; 
+        padding:7px 8px; 
+        display:flex; 
+        justify-content:center; 
+        align-items:center; 
+        background:#fff; 
+        z-index:1000; 
+    } 
+
+
+    /* ===============================
+       NAVIGATION
+       =============================== */
+
+    nav{ 
+        width:100%; 
+        display:block; 
+    } 
+
+
+    nav ul{ 
+        width:100%; 
+        display:flex; 
+        justify-content:space-between; 
+        align-items:center; 
+        flex-wrap:nowrap; 
+        gap:0; 
+        margin:0; 
+        padding:0; 
+    } 
+
+
+    nav ul li{ 
+        flex:1; 
+        margin:0; 
+        padding:0; 
+        text-align:center; 
+    } 
+
+
+    nav ul li a{ 
+        display:block; 
+        margin:0; 
+        padding:2px 1px; 
+        font-size:13px; 
+        font-weight:600; 
+        line-height:1.2; 
+        text-align:center; 
+        white-space:nowrap; 
+        color:red; 
+    } 
+
+
+    nav ul li a:hover{ 
+        color:#FFD54F; 
+    } 
+
+
+    /* ===============================
+       BOOK BUTTON HIDDEN
+       =============================== */
+
+    .book-btn{ 
+        display:none; 
+    } 
+
+
+    /* =================================================
+       ORIGINAL MOBILE RIDES SETTINGS
+    ================================================= */
+
+    .rides-section{ 
+        padding:
+            115px 
+            20px 
+            40px; 
+    } 
+
+
+    .section-title{ 
+        font-size:32px; 
+    } 
+
+
+    .section-subtitle{ 
+        font-size:15px; 
+    } 
+
+
+    .rides-container{ 
+        grid-template-columns:1fr; 
+        max-width:400px; 
+    } 
+
+
+    .ride-card{ 
+        width:100%; 
+    } 
+
+
+    .ride-card img{ 
+        height:240px; 
+    } 
+
+} 
+
+
+/* =====================================================
+   SMALL MOBILE
+   400px AND BELOW
+===================================================== */
+
+@media(max-width:400px){ 
+
+    /* ===============================
+       HEADER
+       =============================== */
+
+    header{ 
+        height:42px; 
+        padding:6px 5px; 
+    } 
+
+
+    /* ===============================
+       NAVIGATION
+       =============================== */
+
+    nav ul{ 
+        width:100%; 
+        gap:0; 
+    } 
+
+
+    nav ul li{ 
+        flex:1; 
+    } 
+
+
+    nav ul li a{ 
+        font-size:11px; 
+        padding:2px 0; 
+        white-space:nowrap; 
+    } 
+
+
+    nav ul li a:hover{ 
+        font-size:12px; 
+    } 
+
+
+    .book-btn{ 
+        display:none; 
+    } 
+
+
+    /* =================================================
+       ORIGINAL SMALL MOBILE RIDE SETTINGS
+    ================================================= */
+
+    .ride-card img{ 
+        height:210px; 
+    } 
+
+
+    .ride-content h3{ 
+        font-size:24px; 
+    } 
+
+
+    .ride-content p{ 
+        font-size:15px; 
+    } 
+
+}
